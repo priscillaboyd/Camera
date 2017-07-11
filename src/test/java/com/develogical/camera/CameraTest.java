@@ -10,7 +10,10 @@ import static org.mockito.Mockito.*;
 public class CameraTest {
     @Test
     public void switchingTheCameraOnPowersUpTheSensor() {
-        Camera camera = new Camera();
-        assertThat(camera.on(), is(true));
+        Sensor mockedSensor = mock(Sensor.class);
+        Camera camera = new Camera(mockedSensor);
+        camera.powerOn();
+        verify(mockedSensor).powerUp();
     }
+
 }
