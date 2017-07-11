@@ -34,4 +34,24 @@ public class CameraTest {
         assertThat(camera.shutterCount, is(0));
     }
 
+//    @Test
+//    public void pressingTheShutterWhenThePowerIsOnCopiesDataFromSensorToMemoryCard() {
+//        Sensor mockedSensor = mock(Sensor.class);
+//        MemoryCard mockedMemCard = mock(MemoryCard.class);
+//        Camera camera = new Camera(mockedSensor, mockedMemCard);
+//        camera.powerOn();
+//        camera.pressShutter();
+//        verify(mockedMemCard).write();
+//    }
+
+    @Test
+    public void pressingTheShutterWhenThePowerIsOnCopiesDataFromSensorToMemoryCard() {
+        Sensor mockedSensor = mock(Sensor.class);
+        MemoryCard mockedMemCard = mock(MemoryCard.class);
+        Camera camera = new Camera(mockedSensor, mockedMemCard);
+        camera.powerOn();
+        camera.pressShutter();
+        verify(mockedSensor).readData();
+    }
+
 }
