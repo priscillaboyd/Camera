@@ -9,8 +9,8 @@ import static org.mockito.Mockito.*;
 
 public class CameraTest {
 
-    Sensor mockedSensor = mock(Sensor.class);
-    MemoryCard mockedMemCard = mock(MemoryCard.class);
+    private Sensor mockedSensor = mock(Sensor.class);
+    private MemoryCard mockedMemCard = mock(MemoryCard.class);
 
     @Test
     public void switchingTheCameraOnPowersUpTheSensor() {
