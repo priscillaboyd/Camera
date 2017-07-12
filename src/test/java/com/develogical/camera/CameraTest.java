@@ -14,7 +14,6 @@ public class CameraTest {
 
     @Test
     public void switchingTheCameraOnPowersUpTheSensor() {
-
         Camera camera = new Camera(mockedSensor);
         camera.powerOn();
         verify(mockedSensor).powerUp();
